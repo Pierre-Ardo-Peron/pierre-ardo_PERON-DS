@@ -1,0 +1,37 @@
+
+
+
+
+
+
+CREATE TABLE IF NOT EXISTS Salarie( 
+	idSal int(10) NOT NULL AUTO_INCREMENT,
+	nom varchar(50) NOT NULL,
+	prenoms varchar(50) NOT NULL,
+	age int(50) NOT NULL,
+	fonction varchar(50) NOT NULL,
+	service varchar(50) NOT NULL, 
+	grade varchar(50) NOT NULL,
+	PRIMARY KEY (idSal)
+);
+CREATE TABLE IF NOT EXISTS Session(
+	idSess int(10) NOT NULL AUTO_INCREMENT,
+	date_deb int(10) NOT NULL,
+	nbre_jours int(5) NOT NULL,
+	module int(25) NOT NULL,
+	idSAL int(10) NOT NULL,
+	lieuForm varchar(50) NOT NULL,
+	PRIMARY KEY (idSess),
+	CONSTRAINT FOREIGN KEY (idSal) REFERENCES Salarie (idSal)
+);
+
+CREATE TABLE User(
+	login varchar(50) NOT NULL,
+	password varchar(50) NOT NULL,
+	PRIMARY KEY (login)
+);
+
+
+
+INSERT INTO  `USER`(`login`,`password`)
+VALUES ('jean.castex@gouv.fr','admin')
